@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Path to the temporary file containing the commit message
+commit_message_file=$1
+
+# Extract the very first line (the subject line/title)
+subject_line=$(head -1 "$commit_message_file")
+
+subject_length=${#subject_line}
+
+if [ "$subject_length" -gt 70 ]; then
+  echo "🔴 Commit rejected: subject line is $subject_length characters (limit: 70, excess: $((subject_length - 70)))"
+  exit 1
+fi
+# IntelliJ IDEA does not show this but terminal does
+echo "🟢 Commit accepted: subject line length is within limit ($subject_length characters)"
