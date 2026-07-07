@@ -7,7 +7,10 @@
 
 # Workflow name — user defined - can be any descriptive name.
 name: CI
-run-name: "CI running against [${{ github.head_ref || github.ref_name }}] for [${{ github.event.pull_request.title || github.event.head_commit.message }}]"
+#run-name: "CI running against [${{ github.head_ref || github.ref_name }}] for [${{ github.event.pull_request.title || github.event.head_commit.message }}]"
+run-name: >
+  CI running against [${{ github.head_ref || github.ref_name }}] for
+  [${{ github.event.pull_request.title || github.event.head_commit.message }}]
 
 # Runs on every push to main and PRs targeting main.
 on:

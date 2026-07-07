@@ -9,7 +9,10 @@
 
 # Workflow name — user defined - can be any descriptive name.
 name: Publish Release
-run-name: "Releasing [${{ github.ref_name }}] to Maven Central - triggered by tag push - approved by [${{ github.actor }}]"
+#run-name: "Publishing [${{ github.ref_name }}] to production (Maven Central) - triggered by tag push - approved by [${{ github.actor }}]"
+run-name: >
+  Publishing [${{ github.ref_name }}] to production (Maven Central), triggered by tag push, approved
+  by [${{ github.actor }}]
 
 # Runs on every tag push that matches the pattern (v0.1.0, v1.0.0, v2.13.4).
 # Patterns that do not match (v0.1.0-SNAPSHOT, v0.1, or 0.1.0).
