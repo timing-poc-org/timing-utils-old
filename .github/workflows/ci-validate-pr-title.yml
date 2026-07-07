@@ -4,7 +4,8 @@
 # readability, enforces consistent formatting and keeps the commit history clean and helps with release automation.
 
 # Workflow name — user defined - can be any descriptive name.
-name: Validate PR Title
+name: PR Title Check
+run-name: "Validating PR title: \"${{ github.event.pull_request.title }}\""
 
 # Runs on every PR.
 on:

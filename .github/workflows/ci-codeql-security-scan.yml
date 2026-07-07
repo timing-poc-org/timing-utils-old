@@ -6,8 +6,10 @@
 
 # Workflow name — user defined - can be any descriptive name.
 name: CodeQL
+run-name: "CodeQL Security scan (triggered by ${{ github.event_name }}) running against ${{ github.ref_name }}"
 
-# Runs on every push to main and PRs targeting main (same as ci.yml), plus a weekly schedule every Monday at 6am UTC.
+# Runs on every push to main and PRs targeting main (same as ci-build-and-test.yml), plus a weekly schedule every
+# Monday at 6am UTC.
 # The schedule is important — new CVE patterns are discovered continuously. Code that was safe last month might match a
 # newly disclosed vulnerability pattern next month. The weekly run catches this even when no code changes.
 on:
@@ -82,7 +84,7 @@ jobs:
         if: steps.check-java.outputs.has_java_code == 'true'
 
         # Use codeql-action/init GitHub Action to initialize CodeQL with language extractors and build configuration.
-        uses: github/codeql-action/init@v4.36.3
+        uses: github/codeql-action/init@v4.36.2
         with:
 
           # Tells CodeQL which language extractor to use.
@@ -101,4 +103,4 @@ jobs:
 
         # Use codeql-action/analyze GitHub Action to run the actual analysis, upload the findings to the Security tab.
         # Any vulnerabilities found appear there but not as a build failure — CodeQL findings are advisory by default.
-        uses: github/codeql-action/analyze@v4.36.3
+        uses: github/codeql-action/analyze@v4.36.2
