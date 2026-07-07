@@ -5,7 +5,8 @@
 
 # Workflow name — user defined - can be any descriptive name.
 name: PR Title Check
-run-name: "Validating PR title: \"${{ github.event.pull_request.title }}\""
+#run-name: "Validating PR title: \"${{ github.event.pull_request.title }}\""
+run-name: "Validating PR title: [${{ github.event.pull_request.title }}]"
 
 # Runs on every PR.
 on:
