@@ -24,7 +24,7 @@ updates:
 
     # Makes Dependabot's PR titles follow a Conventional Commits format.
     # For example, (chore: bump junit from x to y).
-    # This is needed because we are enforcing and validating it in the validate-pr-title.yml workflow.
+    # This is needed because we are enforcing and validating it in the ci-validate-pr-title.yml workflow.
     commit-message:
       prefix: "chore"
 
@@ -50,6 +50,6 @@ updates:
 
     # Makes Dependabot's PR titles follow a Conventional Commits format.
     # For example, (chore: bump actions/checkout from x to y).
-    # This is needed because we are enforcing and validating it in the validate-pr-title.yml workflow.
+    # This is needed because we are enforcing and validating it in the ci-validate-pr-title.yml workflow.
     commit-message:
       prefix: "chore"
