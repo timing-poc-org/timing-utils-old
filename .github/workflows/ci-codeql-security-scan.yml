@@ -6,7 +6,10 @@
 
 # Workflow name — user defined - can be any descriptive name.
 name: CodeQL
-run-name: "CodeQL security scan (triggered by ${{ github.event_name }}) running against [${{ github.head_ref || github.ref_name }}]"
+#run-name: "CodeQL security scan (triggered by ${{ github.event_name }}) running against [${{ github.head_ref || github.ref_name }}]"
+run-name: >
+  CodeQL security scan (triggered by ${{ github.event_name }}) running against
+  [${{ github.head_ref || github.ref_name }}]
 
 # Runs on every push to main and PRs targeting main (same as ci-build-and-test.yml), plus a weekly schedule every
 # Monday at 6am UTC.
