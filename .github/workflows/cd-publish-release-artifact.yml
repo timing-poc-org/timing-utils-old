@@ -43,7 +43,7 @@ jobs:
       - name: Checkout Repository
 
         # Use checkout@v7.0.0 GitHub Action to clone the repository into the runner workspace (GITHUB_WORKSPACE).
-        uses: actions/checkout@v7.0.0
+        uses: actions/checkout@v7.0.1
 
       # Step-2 - Setup JDK.
       - name: Setup JDK 21
